@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="mySQL, ZXQ">
+    <meta name="keywords" content="mySQL数据表, ZXQ">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>mySQL | ZXQ</title>
+    <title>mySQL数据表 | ZXQ</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -319,12 +319,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/zxq-hexo.github.io/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/zxq-hexo.github.io/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">mySQL</h1>
+                    <h1 class="description center-align post-title">mySQL数据表</h1>
                 </div>
             </div>
         </div>
@@ -476,7 +476,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    169
+                    147
                 </div>
                 
 
@@ -499,21 +499,59 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <hr>
-<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>show tables;<br>show create table 表名<br>describe tables_name;</p>
-<hr>
-<h2 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h2><p>复制（只复制表头，不复制记录）<br>create table <strong>**</strong> like <strong><em>；<br>复制（select</em>from:选择所有记录）<br>create table ****</strong> as&lt;select<em>from ***</em>&gt;；</p>
-<hr>
-<h2 id="修改表结构"><a href="#修改表结构" class="headerlink" title="修改表结构"></a>修改表结构</h2><p>alter table [tables_name]<br>add(增加) column <strong>class_id tinyint(1)</strong></p>
-<p><strong>modify</strong>(修改)</p>
-<p><strong>insert</strong>(插入)<br>insert into [tables_name] values(数据);<br>insert into [tables_name] (类型)values(数据)；</p>
-<p><strong>replace</strong>(替换)<br>replace into [tables_name] valuess(数据)；</p>
-<p><strong>update</strong>(修改数据)<br>update [tables_name]<br>set [类型]=[类型]+10；<br>update [tables_name]<br>set [       进行修改    ]<br>where [类型]</p>
-<p>例：update xs<br>    set student_id=’123123’,remakes=’计算机专业’<br>    where name=’刘华’；</p>
-<p><strong>delete</strong>(删除数据)<br>delete form [tables_name]{where 记录}</p>
-<p><strong>drop</strong>(删除结构)<br><strong>truncate table [tables_name]</strong>(数据全删除)</p>
-<p>作业<br>create database db_student;<br>use db_student;<br>create table tb_student<br>(</p>
-<p>);<br>insert into tb_student values(数据);<br>select*from tb_student;</p>
+                <h2 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h2><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>大小</th>
+<th>范围（有符号）</th>
+<th>范围（无符号）</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>tinyint</td>
+<td>1字节</td>
+<td>(-128，127)</td>
+<td>(-128，127)</td>
+<td>小整数值</td>
+</tr>
+<tr>
+<td>smallint</td>
+<td>2字节</td>
+<td>(-32 768，32 767)</td>
+<td>(0，65 535)</td>
+<td>大整数值</td>
+</tr>
+<tr>
+<td>int或integer</td>
+<td>4字节</td>
+<td>(-8 388 608，8 388 607)</td>
+<td>(0，16 777 215)</td>
+<td>大整数值</td>
+</tr>
+<tr>
+<td>bigint</td>
+<td>8字节</td>
+<td>(-9,223,372,036,854,775,808，9 223 372 036 854 775 807)</td>
+<td>(0，18 446 744 073 709 551 615)</td>
+<td>极大整数值</td>
+</tr>
+<tr>
+<td>float</td>
+<td>4 字节</td>
+<td>(-3.402 823 466 E+38，-1.175 494 351 E-38)，0，(1.175 494 351 E-38，3.402 823 466 351 E+38)</td>
+<td>0，(1.175 494 351 E-38，3.402 823 466 E+38)</td>
+<td>单精度</td>
+</tr>
+<tr>
+<td>浮点数值</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
 
             </div>
             <hr/>
@@ -789,9 +827,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="/zxq-hexo.github.io/medias/featureimages/2.jpg" class="responsive-img" alt="mySQL">
+                        <img src="/zxq-hexo.github.io/medias/featureimages/5.jpg" class="responsive-img" alt="mySQL数据库">
                         
-                        <span class="card-title">mySQL</span>
+                        <span class="card-title">mySQL数据库</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1011,7 +1049,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">547</span>&nbsp;字
+                class="white-color">603</span>&nbsp;字
             
             
             
