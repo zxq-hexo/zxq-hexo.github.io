@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="mySQL数据表, ZXQ">
+    <meta name="keywords" content="mySQL数据表详细命令, ZXQ">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>mySQL数据表 | ZXQ</title>
+    <title>mySQL数据表详细命令 | ZXQ</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -319,12 +319,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/zxq-hexo.github.io/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/zxq-hexo.github.io/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">mySQL数据表</h1>
+                    <h1 class="description center-align post-title">mySQL数据表详细命令</h1>
                 </div>
             </div>
         </div>
@@ -469,14 +469,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-03-13
+                    2020-03-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    147
+                    189
                 </div>
                 
 
@@ -499,60 +499,47 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h2><table>
-<thead>
-<tr>
-<th>类型</th>
-<th>大小</th>
-<th>范围（有符号）</th>
-<th>范围（无符号）</th>
-<th>用途</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>tinyint</td>
-<td>1字节</td>
-<td>(-128，127)</td>
-<td>(-128，127)</td>
-<td>小整数值</td>
-</tr>
-<tr>
-<td>smallint</td>
-<td>2字节</td>
-<td>(-32 768，32 767)</td>
-<td>(0，65 535)</td>
-<td>大整数值</td>
-</tr>
-<tr>
-<td>int或integer</td>
-<td>4字节</td>
-<td>(-8 388 608，8 388 607)</td>
-<td>(0，16 777 215)</td>
-<td>大整数值</td>
-</tr>
-<tr>
-<td>bigint</td>
-<td>8字节</td>
-<td>(-9,223,372,036,854,775,808，9 223 372 036 854 775 807)</td>
-<td>(0，18 446 744 073 709 551 615)</td>
-<td>极大整数值</td>
-</tr>
-<tr>
-<td>float</td>
-<td>4 字节</td>
-<td>(-3.402 823 466 E+38，-1.175 494 351 E-38)，0，(1.175 494 351 E-38，3.402 823 466 351 E+38)</td>
-<td>0，(1.175 494 351 E-38，3.402 823 466 E+38)</td>
-<td>单精度</td>
-</tr>
-<tr>
-<td>浮点数值</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
+                <h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>show tables;<br>show create table 表名<br>describe [tables_name];</p>
+<h2 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h2><blockquote>
+<p>复制（只复制表头，不复制记录）<br><code>create table</code> [table_name2] <code>like</code> [table_name1];<br>复制（select * from:选择所有记录）<br><code>create table</code> [table_name2] <code>as&lt;select * from</code> [table_name1]<code>&gt;</code>;</p>
+</blockquote>
+<h2 id="修改表结构"><a href="#修改表结构" class="headerlink" title="修改表结构"></a>修改表结构</h2><blockquote>
+<p><code>alter table</code> [table_name]<br><code>add</code>(增加) [column __name] [column_type];</p>
+<p><code>alter table</code> [table_name]<br><code>drop</code>(删除) cloumn [column __name];</p>
+<p><code>alter table</code> [table_name]<br><code>modify</code>(修改) [column __name] [column_type];</p>
+</blockquote>
+<h2 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h2><blockquote>
+<p><strong>insert</strong>(插入)</p>
+<blockquote>
+<p><code>insert into</code>[table_name] <code>values</code>(数据);<br><code>insert into</code>[table_name] (clumn_name)<code>values</code>(数据);</p>
+</blockquote>
+<p><strong>replace</strong>(替换)</p>
+<blockquote>
+<p><code>replace into</code> [tables_name]<code>values</code>(数据);</p>
+</blockquote>
+<p><strong>update</strong>(修改数据)</p>
+<blockquote>
+<p><code>update</code> [tables_name]<br><code>set</code> [clumn_name]=[clumn_name]+10；<br><code>update</code> [table_name]<br><code>set</code> [  进行修改]<br><code>where</code> [clumn_name];<br>例：update xs<br>set student_id=’123123’,remakes=’计算机专业’<br>where name=’刘华’；</p>
+</blockquote>
+<p><strong>delete</strong>(删除数据)</p>
+<blockquote>
+<p><code>delete form</code> [table_name]<code>where</code> [clumn_name]=[数据];</p>
+</blockquote>
+<p><strong>drop</strong>(删除结构)</p>
+<blockquote>
+<p><code>truncate table</code> [table_name] (数据全删除);</p>
+</blockquote>
+</blockquote>
+<p>作业</p>
+<pre><code>create database db_student;
+use db_student;
+create table tb_student
+(
 
+
+);
+insert into tb_student values(数据);
+select*from tb_student;</code></pre>
             </div>
             <hr/>
 
@@ -577,7 +564,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zxq-hexo.github.io/2020/03/13/mysql%E6%95%B0%E6%8D%AE%E8%A1%A8/">https://zxq-hexo.github.io/2020/03/13/mysql%E6%95%B0%E6%8D%AE%E8%A1%A8/</a>
+                    <a href="https://zxq-hexo.github.io/2020/03/13/MySQL%E6%95%B0%E6%8D%AE%E8%A1%A8(2)/">https://zxq-hexo.github.io/2020/03/13/MySQL%E6%95%B0%E6%8D%AE%E8%A1%A8(2)/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -782,7 +769,7 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/03/13/mysql%E7%AC%AC%E5%9B%9B%E7%AB%A0/">
+                <a href="/2020/03/14/MySQL%E6%95%B0%E6%8D%AE%E8%A1%A8%20/">
                     <div class="card-image">
                         
                         
@@ -794,12 +781,12 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            mysql第四章
+                            mysql第三期
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-13
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-14
                         </span>
                         <span class="publish-author">
                             
@@ -823,19 +810,19 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/03/13/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/">
+                <a href="/2020/03/13/MYSQL%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
                     <div class="card-image">
                         
                         
-                        <img src="/zxq-hexo.github.io/medias/featureimages/5.jpg" class="responsive-img" alt="mySQL数据库">
+                        <img src="/zxq-hexo.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="mySQL数据类型">
                         
-                        <span class="card-title">mySQL数据库</span>
+                        <span class="card-title">mySQL数据类型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            mysql数据库
+                            mysql学习第二期
                         
                     </div>
                     <div class="publish-info">
@@ -1049,7 +1036,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">603</span>&nbsp;字
+                class="white-color">1.5k</span>&nbsp;字
             
             
             
