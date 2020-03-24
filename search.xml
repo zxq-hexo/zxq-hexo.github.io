@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>mySQL单表查询</title>
+      <link href="/2020/03/24/MySQL%E5%8D%95%E8%A1%A8%E6%9F%A5%E8%AF%A2/"/>
+      <url>/2020/03/24/MySQL%E5%8D%95%E8%A1%A8%E6%9F%A5%E8%AF%A2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="4-1简单查询-前面数据表查看数据有讲到"><a href="#4-1简单查询-前面数据表查看数据有讲到" class="headerlink" title="4.1简单查询(前面数据表查看数据有讲到)"></a>4.1简单查询(前面数据表查看数据有讲到)</h2><p>4.1.1 select语句</p><blockquote><p><code>select</code> column_name,column_name<br><code>from</code> [table_name];</p></blockquote><p>4.1.2查询所有字段</p><blockquote><p><code>select * from</code>[table_name];</p></blockquote><p>4.1.3查询指定字段</p><blockquote><p><code>select</code> column_name1,column_name2 <code>from</code> [table_name];</p></blockquote><h2 id="4-2按条件查询"><a href="#4-2按条件查询" class="headerlink" title="4.2按条件查询"></a>4.2按条件查询</h2><p>4.2.1关系运算符的查询</p><blockquote><p><code>select</code> column_name,column_name<br><code>from</code> [table_name]<br><code>where</code> 条件表达式;</p></blockquote><p>我们查询表tb_student中，只看name和age，条件表达式为:age=17的数据:</p><pre><code>mysql&gt; select name ,age    -&gt; from tb_student    -&gt; where age=17;+--------+------+| name   | age  |+--------+------+| 小范   |   17 |+--------+------+1 row in set (0.00 sec)</code></pre><p>4.2.2带IN关键字的查询</p><blockquote><p><code>select</code> column_name,column_name<br><code>from</code> [table_name];<br><code>where</code> column_name[not]IN(元素1,元素2,…);</p></blockquote><p>我们查询表tb_student中，只看name和age，条件表达式为:age在17 18 19中的数据:</p><pre><code>mysql&gt; select name ,age    -&gt; from tb_student    -&gt; where age in(17,18,19);</code></pre><p>4.2.3带between and 关键字的查询</p><blockquote><p><code>select</code> column_name,column_name<br><code>from</code> [table_name];<br><code>where</code> column_name [not] between 元素一 and 元素二;</p></blockquote><p>我们查询表tb_student中，只看name和age，条件表达式为:age在16到18之间的数据:</p><pre><code>mysql&gt; select name ,age    -&gt; from tb_student    -&gt; where age between 16 and 18;</code></pre><p>4.2.4空值查询</p><blockquote><p><code>select</code> column_name,column_name<br><code>from</code> [table_name];<br><code>where</code> column_name  is [not] null;</p></blockquote><p>我们查询表tb_student中，只看name和age，条件表达式为:age为null的数据:</p><pre><code>mysql&gt; select name ,age    -&gt; from tb_student    -&gt; where age is null;</code></pre><p>4.2.5带distinct关键字的查询<br>使用 distinct 来去掉查询记录中重复的值</p><blockquote><p><code>select</code> <code>distinct</code> column_name,column_name<br><code>from</code> [table_name];</p></blockquote><p>4.2.6带like关键字的查询</p><p>用于对字符串进行模糊查询</p><blockquote><p><code>select</code> column_name,column_name<br><code>from</code> [table_name];<br><code>where</code> column_name   [not] like’匹配字符串’;</p></blockquote><p>a%:以a开头的字符串<br>a%c:以a开头 c结尾的字符串<br>%a%:含有a的字符串<br>查找tb_student表中name字段符以”a”开头，以”c”结束 的学生id</p><pre><code>mysql&gt; select name ,age    -&gt; from tb_student    -&gt; where name like &quot;a%c&quot;;</code></pre><p>ab_cd:以ab开头cd结尾的字符串<br>____ad:以ad结尾的字符串(前面几个下划线代表几个字符)<br>查找tb_student表中name字段符以”ab”开头，以”cd”结束 的学生id</p><pre><code>mysql&gt; select name ,age    -&gt; from tb_student    -&gt; where name like &apos;ab_cd&apos;;</code></pre><p>4.2.7带and关键字的多条件查询</p><blockquote><p><code>select</code> column_name,column_name<br><code>from</code> [table_name];<br><code>where</code> 条件表达式1 and  条件表达式2;</p></blockquote><p>我们查询表tb_student中，条件表达式1为:age&lt;15 and 条件表达式2:id&lt;3;</p><pre><code>mysql&gt; select name ,age    -&gt; from tb_student    -&gt; where age&lt;15 and id&lt;3;</code></pre><p>4.2.8带or关键字的多条件查询<br>跟4.2.7类似，只是把and换成or</p><p>or和and关键字一起使用的情况<br>and的优先级高于or</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> study </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>php基本语法</title>
+      <link href="/2020/03/16/php%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/"/>
+      <url>/2020/03/16/php%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h2 id="标记符与书写规则"><a href="#标记符与书写规则" class="headerlink" title="标记符与书写规则"></a>标记符与书写规则</h2><p>在PHP中，定义标识符有一些简单的规则，具体如下:</p><blockquote><p>标识符可以是任何长度，只能由<code>字母、数字、下划线</code>组成<br>标识符不能以<code>数字</code>开始<br>标识符不能包含<code>空格</code><br>如果标识符由多个单词组成，那么应该使用<code>下划线</code>进行分割（如:user_name）</p><p>在PHP中，标识符是区分大小写的，比如$a和$A是不同的。但是<code>函数名称除外</code>，它不区分大小写。</p></blockquote><h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><p>常量必须使用define()函数来声明，声明方式如下所示:<br>bool define(string $name ,mixed $value[,bool$case_insensitive=false])<br>  在上述声明中，参数$name和$value是必选的，分别用于指定常量的名称和值。参数<br>$case_insensitive是可选的，用于指定常量名称是否对大小写敏感，如果<code>$case_insensitive</code>的值为<code>true</code> 表示在调用该常量<br>时，常量名对大小写不敏感，否则，表示对大小写敏感，默认情况为<code>false</code></p><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><h2 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h2><h2 id="print与echo"><a href="#print与echo" class="headerlink" title="print与echo"></a>print与echo</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> study </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>mySQL索引</title>
       <link href="/2020/03/14/MySQL%E7%B4%A2%E5%BC%95/"/>
       <url>/2020/03/14/MySQL%E7%B4%A2%E5%BC%95/</url>
@@ -104,25 +142,6 @@
       <url>/2020/03/11/MySQL%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/</url>
       
         <content type="html"><![CDATA[<p>打开SQLyog<br>点击<br><img src="https://ftp.bmp.ovh/imgs/2020/03/71a9bb81df4c826c.png" alt="1"><br>选择外部数据导入，点击下一步<br><img src="https://ftp.bmp.ovh/imgs/2020/03/93d70bc71c7f765a.png" alt="2"><br>选择导入数据（.excel）<br><img src="https://ftp.bmp.ovh/imgs/2020/03/a76747ab4c490d2a.png" alt="3"><br>选择想要导入数据的数据库<br><img src="https://ftp.bmp.ovh/imgs/2020/03/d39f42db2963340d.png" alt="4"><br>下一步<br><img src="https://ftp.bmp.ovh/imgs/2020/03/388fd8a7187c69ab.png" alt="5"><br>先点击红箭头处，选择你要导入的表，然后点击蓝色箭头，选择表名，随后点击<br><strong>Map</strong><br><img src="https://ftp.bmp.ovh/imgs/2020/03/316ecc1b54c10b55.png" alt="6"><br>在destination 选择对应的标题，type选择类型，再点击 <strong>advan…</strong><br><img src="https://ftp.bmp.ovh/imgs/2020/03/6f4adef7684a9e20.png" alt="6.3"><br>点击删除并重新创建，点击确定<br><img src="https://ftp.bmp.ovh/imgs/2020/03/d882670170825b0c.png" alt="6.5"><br>点击下一步，完成导入。<br><img src="https://ftp.bmp.ovh/imgs/2020/03/8d24947a67c822d9.png" alt="7"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> study </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>php</title>
-      <link href="/2020/03/11/php/"/>
-      <url>/2020/03/11/php/</url>
-      
-        <content type="html"><![CDATA[]]></content>
       
       
       <categories>

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="php, ZXQ">
+    <meta name="keywords" content="mySQL单表查询, ZXQ">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>php | ZXQ</title>
+    <title>mySQL单表查询 | ZXQ</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -319,12 +319,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/zxq-hexo.github.io/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/zxq-hexo.github.io/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">php</h1>
+                    <h1 class="description center-align post-title">mySQL单表查询</h1>
                 </div>
             </div>
         </div>
@@ -462,28 +462,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-03-11
+                    2020-03-24
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-03-14
+                    2020-03-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    621
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -499,7 +499,77 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="4-1简单查询-前面数据表查看数据有讲到"><a href="#4-1简单查询-前面数据表查看数据有讲到" class="headerlink" title="4.1简单查询(前面数据表查看数据有讲到)"></a>4.1简单查询(前面数据表查看数据有讲到)</h2><p>4.1.1 select语句</p>
+<blockquote>
+<p><code>select</code> column_name,column_name<br><code>from</code> [table_name];</p>
+</blockquote>
+<p>4.1.2查询所有字段</p>
+<blockquote>
+<p><code>select * from</code>[table_name];</p>
+</blockquote>
+<p>4.1.3查询指定字段</p>
+<blockquote>
+<p><code>select</code> column_name1,column_name2 <code>from</code> [table_name];</p>
+</blockquote>
+<h2 id="4-2按条件查询"><a href="#4-2按条件查询" class="headerlink" title="4.2按条件查询"></a>4.2按条件查询</h2><p>4.2.1关系运算符的查询</p>
+<blockquote>
+<p><code>select</code> column_name,column_name<br><code>from</code> [table_name]<br><code>where</code> 条件表达式;</p>
+</blockquote>
+<p>我们查询表tb_student中，只看name和age，条件表达式为:age=17的数据:</p>
+<pre><code>mysql&gt; select name ,age
+    -&gt; from tb_student
+    -&gt; where age=17;
++--------+------+
+| name   | age  |
++--------+------+
+| 小范   |   17 |
++--------+------+
+1 row in set (0.00 sec)</code></pre><p>4.2.2带IN关键字的查询</p>
+<blockquote>
+<p><code>select</code> column_name,column_name<br><code>from</code> [table_name];<br><code>where</code> column_name[not]IN(元素1,元素2,…);</p>
+</blockquote>
+<p>我们查询表tb_student中，只看name和age，条件表达式为:age在17 18 19中的数据:</p>
+<pre><code>mysql&gt; select name ,age
+    -&gt; from tb_student
+    -&gt; where age in(17,18,19);</code></pre><p>4.2.3带between and 关键字的查询</p>
+<blockquote>
+<p><code>select</code> column_name,column_name<br><code>from</code> [table_name];<br><code>where</code> column_name [not] between 元素一 and 元素二;</p>
+</blockquote>
+<p>我们查询表tb_student中，只看name和age，条件表达式为:age在16到18之间的数据:</p>
+<pre><code>mysql&gt; select name ,age
+    -&gt; from tb_student
+    -&gt; where age between 16 and 18;</code></pre><p>4.2.4空值查询</p>
+<blockquote>
+<p><code>select</code> column_name,column_name<br><code>from</code> [table_name];<br><code>where</code> column_name  is [not] null;</p>
+</blockquote>
+<p>我们查询表tb_student中，只看name和age，条件表达式为:age为null的数据:</p>
+<pre><code>mysql&gt; select name ,age
+    -&gt; from tb_student
+    -&gt; where age is null;</code></pre><p>4.2.5带distinct关键字的查询<br>使用 distinct 来去掉查询记录中重复的值</p>
+<blockquote>
+<p><code>select</code> <code>distinct</code> column_name,column_name<br><code>from</code> [table_name];</p>
+</blockquote>
+<p>4.2.6带like关键字的查询</p>
+<p>用于对字符串进行模糊查询</p>
+<blockquote>
+<p><code>select</code> column_name,column_name<br><code>from</code> [table_name];<br><code>where</code> column_name   [not] like’匹配字符串’;</p>
+</blockquote>
+<p>a%:以a开头的字符串<br>a%c:以a开头 c结尾的字符串<br>%a%:含有a的字符串<br>查找tb_student表中name字段符以”a”开头，以”c”结束 的学生id</p>
+<pre><code>mysql&gt; select name ,age
+    -&gt; from tb_student
+    -&gt; where name like &quot;a%c&quot;;</code></pre><p>ab_cd:以ab开头cd结尾的字符串<br>____ad:以ad结尾的字符串(前面几个下划线代表几个字符)<br>查找tb_student表中name字段符以”ab”开头，以”cd”结束 的学生id</p>
+<pre><code>mysql&gt; select name ,age
+    -&gt; from tb_student
+    -&gt; where name like &apos;ab_cd&apos;;</code></pre><p>4.2.7带and关键字的多条件查询</p>
+<blockquote>
+<p><code>select</code> column_name,column_name<br><code>from</code> [table_name];<br><code>where</code> 条件表达式1 and  条件表达式2;</p>
+</blockquote>
+<p>我们查询表tb_student中，条件表达式1为:age&lt;15 and 条件表达式2:id&lt;3;</p>
+<pre><code>mysql&gt; select name ,age
+    -&gt; from tb_student
+    -&gt; where age&lt;15 and id&lt;3;</code></pre><p>4.2.8带or关键字的多条件查询<br>跟4.2.7类似，只是把and换成or</p>
+<p>or和and关键字一起使用的情况<br>and的优先级高于or</p>
+
             </div>
             <hr/>
 
@@ -524,7 +594,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zxq-hexo.github.io/2020/03/11/php/">https://zxq-hexo.github.io/2020/03/11/php/</a>
+                    <a href="https://zxq-hexo.github.io/2020/03/24/MySQL%E5%8D%95%E8%A1%A8%E6%9F%A5%E8%AF%A2/">https://zxq-hexo.github.io/2020/03/24/MySQL%E5%8D%95%E8%A1%A8%E6%9F%A5%E8%AF%A2/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -600,29 +670,30 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/03/11/MySQL%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/">
+                <a href="/2020/03/24/MySQL%E5%8D%95%E8%A1%A8%E6%9F%A5%E8%AF%A2/">
                     <div class="card-image">
                         
                         
-                        <img src="/zxq-hexo.github.io/medias/featureimages/2.jpg" class="responsive-img" alt="mySQL">
+                        <img src="/zxq-hexo.github.io/medias/featureimages/2.jpg" class="responsive-img" alt="mySQL单表查询">
                         
-                        <span class="card-title">mySQL</span>
+                        <span class="card-title">mySQL单表查询</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            mysql数据导入
+                            mysql第四期
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-11
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -635,6 +706,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -645,31 +717,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/03/10/hello-world/">
+                <a href="/2020/03/16/php%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">
                     <div class="card-image">
                         
                         
-                        <img src="/zxq-hexo.github.io/medias/featureimages/13.jpg" class="responsive-img" alt="第一篇博客">
+                        <img src="/zxq-hexo.github.io/medias/featureimages/18.jpg" class="responsive-img" alt="php基本语法">
                         
-                        <span class="card-title">第一篇博客</span>
+                        <span class="card-title">php基本语法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            hello world
+                            PHP第一期
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-16
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/test/" class="post-category">
-                                    test
+                            <a href="/categories/study/" class="post-category">
+                                    study
                                 </a>
                             
                             
@@ -871,7 +943,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">1.5k</span>&nbsp;字
+                class="white-color">2.4k</span>&nbsp;字
             
             
             
