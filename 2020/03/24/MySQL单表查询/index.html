@@ -469,21 +469,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-03-24
+                    2020-04-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    621
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    5 分
                 </div>
                 
 
@@ -499,20 +499,16 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="4-1简单查询-前面数据表查看数据有讲到"><a href="#4-1简单查询-前面数据表查看数据有讲到" class="headerlink" title="4.1简单查询(前面数据表查看数据有讲到)"></a>4.1简单查询(前面数据表查看数据有讲到)</h2><p>4.1.1 select语句</p>
-<blockquote>
+                <h2 id="4-1简单查询-前面数据表查看数据有讲到"><a href="#4-1简单查询-前面数据表查看数据有讲到" class="headerlink" title="4.1简单查询(前面数据表查看数据有讲到)"></a>4.1简单查询(前面数据表查看数据有讲到)</h2><h2 id="—4-1-1-select语句"><a href="#—4-1-1-select语句" class="headerlink" title="—4.1.1 select语句"></a>—4.1.1 select语句</h2><blockquote>
 <p><code>select</code> column_name,column_name<br><code>from</code> [table_name];</p>
 </blockquote>
-<p>4.1.2查询所有字段</p>
-<blockquote>
+<h2 id="—4-1-2查询所有字段"><a href="#—4-1-2查询所有字段" class="headerlink" title="—4.1.2查询所有字段"></a>—4.1.2查询所有字段</h2><blockquote>
 <p><code>select * from</code>[table_name];</p>
 </blockquote>
-<p>4.1.3查询指定字段</p>
-<blockquote>
+<h2 id="—4-1-3查询指定字段"><a href="#—4-1-3查询指定字段" class="headerlink" title="—4.1.3查询指定字段"></a>—4.1.3查询指定字段</h2><blockquote>
 <p><code>select</code> column_name1,column_name2 <code>from</code> [table_name];</p>
 </blockquote>
-<h2 id="4-2按条件查询"><a href="#4-2按条件查询" class="headerlink" title="4.2按条件查询"></a>4.2按条件查询</h2><p>4.2.1关系运算符的查询</p>
-<blockquote>
+<h2 id="4-2按条件查询"><a href="#4-2按条件查询" class="headerlink" title="4.2按条件查询"></a>4.2按条件查询</h2><h2 id="—4-2-1关系运算符的查询"><a href="#—4-2-1关系运算符的查询" class="headerlink" title="—4.2.1关系运算符的查询"></a>—4.2.1关系运算符的查询</h2><blockquote>
 <p><code>select</code> column_name,column_name<br><code>from</code> [table_name]<br><code>where</code> 条件表达式;</p>
 </blockquote>
 <p>我们查询表tb_student中，只看name和age，条件表达式为:age=17的数据:</p>
@@ -524,33 +520,29 @@
 +--------+------+
 | 小范   |   17 |
 +--------+------+
-1 row in set (0.00 sec)</code></pre><p>4.2.2带IN关键字的查询</p>
-<blockquote>
+1 row in set (0.00 sec)</code></pre><h2 id="—4-2-2带IN关键字的查询"><a href="#—4-2-2带IN关键字的查询" class="headerlink" title="—4.2.2带IN关键字的查询"></a>—4.2.2带IN关键字的查询</h2><blockquote>
 <p><code>select</code> column_name,column_name<br><code>from</code> [table_name];<br><code>where</code> column_name[not]IN(元素1,元素2,…);</p>
 </blockquote>
 <p>我们查询表tb_student中，只看name和age，条件表达式为:age在17 18 19中的数据:</p>
 <pre><code>mysql&gt; select name ,age
     -&gt; from tb_student
-    -&gt; where age in(17,18,19);</code></pre><p>4.2.3带between and 关键字的查询</p>
-<blockquote>
+    -&gt; where age in(17,18,19);</code></pre><h2 id="—4-2-3带between-and-关键字的查询"><a href="#—4-2-3带between-and-关键字的查询" class="headerlink" title="—4.2.3带between and 关键字的查询"></a>—4.2.3带between and 关键字的查询</h2><blockquote>
 <p><code>select</code> column_name,column_name<br><code>from</code> [table_name];<br><code>where</code> column_name [not] between 元素一 and 元素二;</p>
 </blockquote>
 <p>我们查询表tb_student中，只看name和age，条件表达式为:age在16到18之间的数据:</p>
 <pre><code>mysql&gt; select name ,age
     -&gt; from tb_student
-    -&gt; where age between 16 and 18;</code></pre><p>4.2.4空值查询</p>
-<blockquote>
+    -&gt; where age between 16 and 18;</code></pre><h2 id="—4-2-4空值查询"><a href="#—4-2-4空值查询" class="headerlink" title="—4.2.4空值查询"></a>—4.2.4空值查询</h2><blockquote>
 <p><code>select</code> column_name,column_name<br><code>from</code> [table_name];<br><code>where</code> column_name  is [not] null;</p>
 </blockquote>
 <p>我们查询表tb_student中，只看name和age，条件表达式为:age为null的数据:</p>
 <pre><code>mysql&gt; select name ,age
     -&gt; from tb_student
-    -&gt; where age is null;</code></pre><p>4.2.5带distinct关键字的查询<br>使用 distinct 来去掉查询记录中重复的值</p>
+    -&gt; where age is null;</code></pre><h2 id="—4-2-5带distinct关键字的查询"><a href="#—4-2-5带distinct关键字的查询" class="headerlink" title="—4.2.5带distinct关键字的查询"></a>—4.2.5带distinct关键字的查询</h2><p>使用 distinct 来去掉查询记录中重复的值</p>
 <blockquote>
 <p><code>select</code> <code>distinct</code> column_name,column_name<br><code>from</code> [table_name];</p>
 </blockquote>
-<p>4.2.6带like关键字的查询</p>
-<p>用于对字符串进行模糊查询</p>
+<h2 id="—4-2-6带like关键字的查询"><a href="#—4-2-6带like关键字的查询" class="headerlink" title="—4.2.6带like关键字的查询"></a>—4.2.6带like关键字的查询</h2><p>用于对字符串进行模糊查询</p>
 <blockquote>
 <p><code>select</code> column_name,column_name<br><code>from</code> [table_name];<br><code>where</code> column_name   [not] like’匹配字符串’;</p>
 </blockquote>
@@ -560,15 +552,57 @@
     -&gt; where name like &quot;a%c&quot;;</code></pre><p>ab_cd:以ab开头cd结尾的字符串<br>____ad:以ad结尾的字符串(前面几个下划线代表几个字符)<br>查找tb_student表中name字段符以”ab”开头，以”cd”结束 的学生id</p>
 <pre><code>mysql&gt; select name ,age
     -&gt; from tb_student
-    -&gt; where name like &apos;ab_cd&apos;;</code></pre><p>4.2.7带and关键字的多条件查询</p>
-<blockquote>
+    -&gt; where name like &apos;ab_cd&apos;;</code></pre><h2 id="—4-2-7带and关键字的多条件查询"><a href="#—4-2-7带and关键字的多条件查询" class="headerlink" title="—4.2.7带and关键字的多条件查询"></a>—4.2.7带and关键字的多条件查询</h2><blockquote>
 <p><code>select</code> column_name,column_name<br><code>from</code> [table_name];<br><code>where</code> 条件表达式1 and  条件表达式2;</p>
 </blockquote>
 <p>我们查询表tb_student中，条件表达式1为:age&lt;15 and 条件表达式2:id&lt;3;</p>
 <pre><code>mysql&gt; select name ,age
     -&gt; from tb_student
-    -&gt; where age&lt;15 and id&lt;3;</code></pre><p>4.2.8带or关键字的多条件查询<br>跟4.2.7类似，只是把and换成or</p>
+    -&gt; where age&lt;15 and id&lt;3;</code></pre><h2 id="—4-2-8带or关键字的多条件查询"><a href="#—4-2-8带or关键字的多条件查询" class="headerlink" title="—4.2.8带or关键字的多条件查询"></a>—4.2.8带or关键字的多条件查询</h2><p>跟4.2.7类似，只是把and换成or</p>
 <p>or和and关键字一起使用的情况<br>and的优先级高于or</p>
+<h2 id="4-3-高级查询"><a href="#4-3-高级查询" class="headerlink" title="4.3 高级查询"></a>4.3 高级查询</h2><h2 id="—4-3-1-聚合函数"><a href="#—4-3-1-聚合函数" class="headerlink" title="—4.3.1 聚合函数"></a>—4.3.1 聚合函数</h2><p>1、count()函数<br><code>COUNT()函数用来统计记录的条数</code></p>
+<blockquote>
+<p>语法：select count(*)from 表名;</p>
+</blockquote>
+<p>2、sum()函数<br><code>SUM()是求和函数，用于求出表中某个字段所有值的总和</code></p>
+<blockquote>
+<p>语法：select sum(字段名) from 表名;</p>
+</blockquote>
+<p>3、avg()函数<br><code>AVG()函数用于求出某个字段所有值的平均值</code></p>
+<blockquote>
+<p>语法：select avg(字段名)from 表名;</p>
+</blockquote>
+<p>4、max()函数<br><code>MAX()函数是求最大值的函数，用于求出某个字段的最大值</code></p>
+<blockquote>
+<p>语法：select max(grade)from 表名;</p>
+</blockquote>
+<p>5、min()函数<br><code>MIN()函数是求最小值的函数，用于求出某个字段的最小值</code></p>
+<blockquote>
+<p>语法：select min(grade)from 表名;</p>
+</blockquote>
+<h2 id="—4-3-2对查询结果排序"><a href="#—4-3-2对查询结果排序" class="headerlink" title="—4.3.2对查询结果排序"></a>—4.3.2对查询结果排序</h2><p>可以使用<code>ORDER BY</code>对查询结果进行排序。</p>
+<blockquote>
+<p>SELECT (字段名1,字段名2,……)<br>FROM 表名<br>ORDER BY 字段名1 [ASC(升序) | DESC(降序)]，字段名2 [ASC(升序) | DESC(降序)]……</p>
+</blockquote>
+<h2 id="—4-3-3分组查询"><a href="#—4-3-3分组查询" class="headerlink" title="—4.3.3分组查询"></a>—4.3.3分组查询</h2><p>可以使用<code>GROUP BY</code>按某个字段或者多个字段中的值进行分组，字段中值相同的为一组。</p>
+<blockquote>
+<p>SELECT (字段名1,字段名2,……)<br>FROM 表名<br>GROUP BY 字段名1 ，字段名2 [HAVING 条件表达式]……</p>
+</blockquote>
+<p>1、单独使用GROUP BY分组<br>单独使用group by关键字，查询的是每个分组中的一条记录。</p>
+<p>2、GROUP BY和聚合函数一起使用<br>GROUP BY和聚合函数一起使用，可以统计出某个或者某些字段在一个分组中的最大值、最小值、平均值等等。</p>
+<p>3、GROUP BY和HAVING关键字一起使用<br>HAVING关键字和WHERE关键字的作用相同，都用于设置条件表达式对查询结果进行过滤。<br>HAVING关键字和WHERE关键字的区别在于，HAVING关键字后可以跟聚合函数，而WHERE关键字不能。通常情况下HAVING关键字都和GROUP BY一起使用，用于对分组后的结果进行过滤。</p>
+<h2 id="—4-3-4使用LIMIT限制查询结果的数量"><a href="#—4-3-4使用LIMIT限制查询结果的数量" class="headerlink" title="—4.3.4使用LIMIT限制查询结果的数量"></a>—4.3.4使用LIMIT限制查询结果的数量</h2><p>MySQL中提供了一个关键字LIMIT，可以指定查询结果从哪一条记录开始以及一共查询多少条信息。</p>
+<blockquote>
+<p>SELECT 字段名1,字段名2,……<br>FROM 表名<br>LIMIT [OFFSET，] 记录数(4,4的意思是从第五个开始查询四个数)</p>
+</blockquote>
+<h2 id="—4-3-5函数-列表"><a href="#—4-3-5函数-列表" class="headerlink" title="—4.3.5函数(列表)"></a>—4.3.5函数(列表)</h2><p>嗯 有点多 还是自己上网找吧</p>
+<h2 id="4-4-为表和字段取别名"><a href="#4-4-为表和字段取别名" class="headerlink" title="4.4 为表和字段取别名"></a>4.4 为表和字段取别名</h2><h2 id="—4-4-1为表取别名"><a href="#—4-4-1为表取别名" class="headerlink" title="—4.4.1为表取别名"></a>—4.4.1为表取别名</h2><p>在查询操作时，如果表名很长使用起来就不太方便，这时可以为表取一个别名，用这个别名来代替表的名称。<br>MySQL中为表起别名的格式如下所示：</p>
+<blockquote>
+<p>select *from 表名[as]别名;<br>AS关键字用于指定表名的别名，它可以省略不写。</p>
+</blockquote>
+<h2 id="—4-4-2为字段取别名"><a href="#—4-4-2为字段取别名" class="headerlink" title="—4.4.2为字段取别名"></a>—4.4.2为字段取别名</h2><blockquote>
+<p>select字段名[AS]别名，字段名[AS]别名form 表名;</p>
+</blockquote>
 
             </div>
             <hr/>
@@ -943,7 +977,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">2.4k</span>&nbsp;字
+                class="white-color">3.1k</span>&nbsp;字
             
             
             
