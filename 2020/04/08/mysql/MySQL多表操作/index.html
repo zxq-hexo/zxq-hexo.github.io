@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="mySQL数据表详细命令, ZXQ">
+    <meta name="keywords" content="mysql/MySQL多表操作, ZXQ">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>mySQL数据表详细命令 | ZXQ</title>
+    <title>mysql/MySQL多表操作 | ZXQ</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -319,12 +319,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/zxq-hexo.github.io/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/zxq-hexo.github.io/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">mySQL数据表详细命令</h1>
+                    <h1 class="description center-align post-title">mysql/MySQL多表操作</h1>
                 </div>
             </div>
         </div>
@@ -446,15 +446,6 @@
                 </div>
                 <div class="col s5 right-align">
                     
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/study/" class="post-category">
-                                study
-                            </a>
-                        
-                    </div>
-                    
                 </div>
             </div>
 
@@ -462,21 +453,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-03-13
+                    2020-04-08
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-03-14
+                    2020-04-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    189
+                    0
                 </div>
                 
 
@@ -499,47 +490,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>show tables;<br>show create table 表名<br>describe [tables_name];</p>
-<h2 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h2><blockquote>
-<p>复制（只复制表头，不复制记录）<br><code>create table</code> [table_name2] <code>like</code> [table_name1];<br>复制（select * from:选择所有记录）<br><code>create table</code> [table_name2] <code>as&lt;select * from</code> [table_name1]<code>&gt;</code>;</p>
-</blockquote>
-<h2 id="修改表结构"><a href="#修改表结构" class="headerlink" title="修改表结构"></a>修改表结构</h2><blockquote>
-<p><code>alter table</code> [table_name]<br><code>add</code>(增加) [column __name] [column_type];</p>
-<p><code>alter table</code> [table_name]<br><code>drop</code>(删除) cloumn [column __name];</p>
-<p><code>alter table</code> [table_name]<br><code>modify</code>(修改) [column __name] [column_type];</p>
-</blockquote>
-<h2 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h2><blockquote>
-<p><strong>insert</strong>(插入)</p>
-<blockquote>
-<p><code>insert into</code>[table_name] <code>values</code>(数据);<br><code>insert into</code>[table_name] (clumn_name)<code>values</code>(数据);</p>
-</blockquote>
-<p><strong>replace</strong>(替换)</p>
-<blockquote>
-<p><code>replace into</code> [tables_name]<code>values</code>(数据);</p>
-</blockquote>
-<p><strong>update</strong>(修改数据)</p>
-<blockquote>
-<p><code>update</code> [tables_name]<br><code>set</code> [clumn_name]=[clumn_name]+10；<br><code>update</code> [table_name]<br><code>set</code> [  进行修改]<br><code>where</code> [clumn_name];<br>例：update xs<br>set student_id=’123123’,remakes=’计算机专业’<br>where name=’刘华’；</p>
-</blockquote>
-<p><strong>delete</strong>(删除数据)</p>
-<blockquote>
-<p><code>delete form</code> [table_name]<code>where</code> [clumn_name]=[数据];</p>
-</blockquote>
-<p><strong>drop</strong>(删除结构)</p>
-<blockquote>
-<p><code>truncate table</code> [table_name] (数据全删除);</p>
-</blockquote>
-</blockquote>
-<p>作业</p>
-<pre><code>create database db_student;
-use db_student;
-create table tb_student
-(
-
-
-);
-insert into tb_student values(数据);
-select*from tb_student;</code></pre>
+                
             </div>
             <hr/>
 
@@ -564,7 +515,7 @@ select*from tb_student;</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zxq-hexo.github.io/2020/03/13/MySQL%E6%95%B0%E6%8D%AE%E8%A1%A8%E8%AF%A6%E7%BB%86%E5%91%BD%E4%BB%A4/">https://zxq-hexo.github.io/2020/03/13/MySQL%E6%95%B0%E6%8D%AE%E8%A1%A8%E8%AF%A6%E7%BB%86%E5%91%BD%E4%BB%A4/</a>
+                    <a href="https://zxq-hexo.github.io/2020/04/08/mysql/MySQL%E5%A4%9A%E8%A1%A8%E6%93%8D%E4%BD%9C/">https://zxq-hexo.github.io/2020/04/08/mysql/MySQL%E5%A4%9A%E8%A1%A8%E6%93%8D%E4%BD%9C/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -644,24 +595,24 @@ select*from tb_student;</code></pre>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/03/14/MySQL%E6%95%B0%E6%8D%AE%E8%A1%A8/">
+                <a href="/2020/04/11/java/java%E4%B8%AD%E7%BA%A7/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">
                     <div class="card-image">
                         
                         
-                        <img src="/zxq-hexo.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="mySQL数据表">
+                        <img src="/zxq-hexo.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="异常处理">
                         
-                        <span class="card-title">mySQL数据表</span>
+                        <span class="card-title">异常处理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            mysql第三期
+                            java中级
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-14
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-11
                         </span>
                         <span class="publish-author">
                             
@@ -685,24 +636,24 @@ select*from tb_student;</code></pre>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/03/13/MYSQL%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
+                <a href="/2020/03/24/mysql/MySQL%E5%8D%95%E8%A1%A8%E6%9F%A5%E8%AF%A2/">
                     <div class="card-image">
                         
                         
-                        <img src="/zxq-hexo.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="mySQL数据类型">
+                        <img src="/zxq-hexo.github.io/medias/featureimages/2.jpg" class="responsive-img" alt="mySQL单表查询">
                         
-                        <span class="card-title">mySQL数据类型</span>
+                        <span class="card-title">mySQL单表查询</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            mysql学习第二期
+                            mysql第四期
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-24
                             </span>
                         <span class="publish-author">
                             
@@ -911,7 +862,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">3.1k</span>&nbsp;字
+                class="white-color">4.1k</span>&nbsp;字
             
             
             

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="mySQL单表查询, ZXQ">
+    <meta name="keywords" content="mySQL数据表详细命令, ZXQ">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>mySQL单表查询 | ZXQ</title>
+    <title>mySQL数据表详细命令 | ZXQ</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -319,12 +319,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/zxq-hexo.github.io/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/zxq-hexo.github.io/medias/featureimages/7.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">mySQL单表查询</h1>
+                    <h1 class="description center-align post-title">mySQL数据表详细命令</h1>
                 </div>
             </div>
         </div>
@@ -462,28 +462,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-03-24
+                    2020-03-13
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-08
+                    2020-03-14
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    189
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    1 分
                 </div>
                 
 
@@ -499,111 +499,47 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="4-1简单查询-前面数据表查看数据有讲到"><a href="#4-1简单查询-前面数据表查看数据有讲到" class="headerlink" title="4.1简单查询(前面数据表查看数据有讲到)"></a>4.1简单查询(前面数据表查看数据有讲到)</h2><h2 id="—4-1-1-select语句"><a href="#—4-1-1-select语句" class="headerlink" title="—4.1.1 select语句"></a>—4.1.1 select语句</h2><blockquote>
-<p><code>select</code> column_name,column_name<br><code>from</code> [table_name];</p>
+                <h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>show tables;<br>show create table 表名<br>describe [tables_name];</p>
+<h2 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h2><blockquote>
+<p>复制（只复制表头，不复制记录）<br><code>create table</code> [table_name2] <code>like</code> [table_name1];<br>复制（select * from:选择所有记录）<br><code>create table</code> [table_name2] <code>as&lt;select * from</code> [table_name1]<code>&gt;</code>;</p>
 </blockquote>
-<h2 id="—4-1-2查询所有字段"><a href="#—4-1-2查询所有字段" class="headerlink" title="—4.1.2查询所有字段"></a>—4.1.2查询所有字段</h2><blockquote>
-<p><code>select * from</code>[table_name];</p>
+<h2 id="修改表结构"><a href="#修改表结构" class="headerlink" title="修改表结构"></a>修改表结构</h2><blockquote>
+<p><code>alter table</code> [table_name]<br><code>add</code>(增加) [column __name] [column_type];</p>
+<p><code>alter table</code> [table_name]<br><code>drop</code>(删除) cloumn [column __name];</p>
+<p><code>alter table</code> [table_name]<br><code>modify</code>(修改) [column __name] [column_type];</p>
 </blockquote>
-<h2 id="—4-1-3查询指定字段"><a href="#—4-1-3查询指定字段" class="headerlink" title="—4.1.3查询指定字段"></a>—4.1.3查询指定字段</h2><blockquote>
-<p><code>select</code> column_name1,column_name2 <code>from</code> [table_name];</p>
-</blockquote>
-<h2 id="4-2按条件查询"><a href="#4-2按条件查询" class="headerlink" title="4.2按条件查询"></a>4.2按条件查询</h2><h2 id="—4-2-1关系运算符的查询"><a href="#—4-2-1关系运算符的查询" class="headerlink" title="—4.2.1关系运算符的查询"></a>—4.2.1关系运算符的查询</h2><blockquote>
-<p><code>select</code> column_name,column_name<br><code>from</code> [table_name]<br><code>where</code> 条件表达式;</p>
-</blockquote>
-<p>我们查询表tb_student中，只看name和age，条件表达式为:age=17的数据:</p>
-<pre><code>mysql&gt; select name ,age
-    -&gt; from tb_student
-    -&gt; where age=17;
-+--------+------+
-| name   | age  |
-+--------+------+
-| 小范   |   17 |
-+--------+------+
-1 row in set (0.00 sec)</code></pre><h2 id="—4-2-2带IN关键字的查询"><a href="#—4-2-2带IN关键字的查询" class="headerlink" title="—4.2.2带IN关键字的查询"></a>—4.2.2带IN关键字的查询</h2><blockquote>
-<p><code>select</code> column_name,column_name<br><code>from</code> [table_name];<br><code>where</code> column_name[not]IN(元素1,元素2,…);</p>
-</blockquote>
-<p>我们查询表tb_student中，只看name和age，条件表达式为:age在17 18 19中的数据:</p>
-<pre><code>mysql&gt; select name ,age
-    -&gt; from tb_student
-    -&gt; where age in(17,18,19);</code></pre><h2 id="—4-2-3带between-and-关键字的查询"><a href="#—4-2-3带between-and-关键字的查询" class="headerlink" title="—4.2.3带between and 关键字的查询"></a>—4.2.3带between and 关键字的查询</h2><blockquote>
-<p><code>select</code> column_name,column_name<br><code>from</code> [table_name];<br><code>where</code> column_name [not] between 元素一 and 元素二;</p>
-</blockquote>
-<p>我们查询表tb_student中，只看name和age，条件表达式为:age在16到18之间的数据:</p>
-<pre><code>mysql&gt; select name ,age
-    -&gt; from tb_student
-    -&gt; where age between 16 and 18;</code></pre><h2 id="—4-2-4空值查询"><a href="#—4-2-4空值查询" class="headerlink" title="—4.2.4空值查询"></a>—4.2.4空值查询</h2><blockquote>
-<p><code>select</code> column_name,column_name<br><code>from</code> [table_name];<br><code>where</code> column_name  is [not] null;</p>
-</blockquote>
-<p>我们查询表tb_student中，只看name和age，条件表达式为:age为null的数据:</p>
-<pre><code>mysql&gt; select name ,age
-    -&gt; from tb_student
-    -&gt; where age is null;</code></pre><h2 id="—4-2-5带distinct关键字的查询"><a href="#—4-2-5带distinct关键字的查询" class="headerlink" title="—4.2.5带distinct关键字的查询"></a>—4.2.5带distinct关键字的查询</h2><p>使用 distinct 来去掉查询记录中重复的值</p>
+<h2 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h2><blockquote>
+<p><strong>insert</strong>(插入)</p>
 <blockquote>
-<p><code>select</code> <code>distinct</code> column_name,column_name<br><code>from</code> [table_name];</p>
+<p><code>insert into</code>[table_name] <code>values</code>(数据);<br><code>insert into</code>[table_name] (clumn_name)<code>values</code>(数据);</p>
 </blockquote>
-<h2 id="—4-2-6带like关键字的查询"><a href="#—4-2-6带like关键字的查询" class="headerlink" title="—4.2.6带like关键字的查询"></a>—4.2.6带like关键字的查询</h2><p>用于对字符串进行模糊查询</p>
+<p><strong>replace</strong>(替换)</p>
 <blockquote>
-<p><code>select</code> column_name,column_name<br><code>from</code> [table_name];<br><code>where</code> column_name   [not] like’匹配字符串’;</p>
+<p><code>replace into</code> [tables_name]<code>values</code>(数据);</p>
 </blockquote>
-<p>a%:以a开头的字符串<br>a%c:以a开头 c结尾的字符串<br>%a%:含有a的字符串<br>查找tb_student表中name字段符以”a”开头，以”c”结束 的学生id</p>
-<pre><code>mysql&gt; select name ,age
-    -&gt; from tb_student
-    -&gt; where name like &quot;a%c&quot;;</code></pre><p>ab_cd:以ab开头cd结尾的字符串<br>____ad:以ad结尾的字符串(前面几个下划线代表几个字符)<br>查找tb_student表中name字段符以”ab”开头，以”cd”结束 的学生id</p>
-<pre><code>mysql&gt; select name ,age
-    -&gt; from tb_student
-    -&gt; where name like &apos;ab_cd&apos;;</code></pre><h2 id="—4-2-7带and关键字的多条件查询"><a href="#—4-2-7带and关键字的多条件查询" class="headerlink" title="—4.2.7带and关键字的多条件查询"></a>—4.2.7带and关键字的多条件查询</h2><blockquote>
-<p><code>select</code> column_name,column_name<br><code>from</code> [table_name];<br><code>where</code> 条件表达式1 and  条件表达式2;</p>
-</blockquote>
-<p>我们查询表tb_student中，条件表达式1为:age&lt;15 and 条件表达式2:id&lt;3;</p>
-<pre><code>mysql&gt; select name ,age
-    -&gt; from tb_student
-    -&gt; where age&lt;15 and id&lt;3;</code></pre><h2 id="—4-2-8带or关键字的多条件查询"><a href="#—4-2-8带or关键字的多条件查询" class="headerlink" title="—4.2.8带or关键字的多条件查询"></a>—4.2.8带or关键字的多条件查询</h2><p>跟4.2.7类似，只是把and换成or</p>
-<p>or和and关键字一起使用的情况<br>and的优先级高于or</p>
-<h2 id="4-3-高级查询"><a href="#4-3-高级查询" class="headerlink" title="4.3 高级查询"></a>4.3 高级查询</h2><h2 id="—4-3-1-聚合函数"><a href="#—4-3-1-聚合函数" class="headerlink" title="—4.3.1 聚合函数"></a>—4.3.1 聚合函数</h2><p>1、count()函数<br><code>COUNT()函数用来统计记录的条数</code></p>
+<p><strong>update</strong>(修改数据)</p>
 <blockquote>
-<p>语法：select count(*)from 表名;</p>
+<p><code>update</code> [tables_name]<br><code>set</code> [clumn_name]=[clumn_name]+10；<br><code>update</code> [table_name]<br><code>set</code> [  进行修改]<br><code>where</code> [clumn_name];<br>例：update xs<br>set student_id=’123123’,remakes=’计算机专业’<br>where name=’刘华’；</p>
 </blockquote>
-<p>2、sum()函数<br><code>SUM()是求和函数，用于求出表中某个字段所有值的总和</code></p>
+<p><strong>delete</strong>(删除数据)</p>
 <blockquote>
-<p>语法：select sum(字段名) from 表名;</p>
+<p><code>delete form</code> [table_name]<code>where</code> [clumn_name]=[数据];</p>
 </blockquote>
-<p>3、avg()函数<br><code>AVG()函数用于求出某个字段所有值的平均值</code></p>
+<p><strong>drop</strong>(删除结构)</p>
 <blockquote>
-<p>语法：select avg(字段名)from 表名;</p>
+<p><code>truncate table</code> [table_name] (数据全删除);</p>
 </blockquote>
-<p>4、max()函数<br><code>MAX()函数是求最大值的函数，用于求出某个字段的最大值</code></p>
-<blockquote>
-<p>语法：select max(grade)from 表名;</p>
 </blockquote>
-<p>5、min()函数<br><code>MIN()函数是求最小值的函数，用于求出某个字段的最小值</code></p>
-<blockquote>
-<p>语法：select min(grade)from 表名;</p>
-</blockquote>
-<h2 id="—4-3-2对查询结果排序"><a href="#—4-3-2对查询结果排序" class="headerlink" title="—4.3.2对查询结果排序"></a>—4.3.2对查询结果排序</h2><p>可以使用<code>ORDER BY</code>对查询结果进行排序。</p>
-<blockquote>
-<p>SELECT (字段名1,字段名2,……)<br>FROM 表名<br>ORDER BY 字段名1 [ASC(升序) | DESC(降序)]，字段名2 [ASC(升序) | DESC(降序)]……</p>
-</blockquote>
-<h2 id="—4-3-3分组查询"><a href="#—4-3-3分组查询" class="headerlink" title="—4.3.3分组查询"></a>—4.3.3分组查询</h2><p>可以使用<code>GROUP BY</code>按某个字段或者多个字段中的值进行分组，字段中值相同的为一组。</p>
-<blockquote>
-<p>SELECT (字段名1,字段名2,……)<br>FROM 表名<br>GROUP BY 字段名1 ，字段名2 [HAVING 条件表达式]……</p>
-</blockquote>
-<p>1、单独使用GROUP BY分组<br>单独使用group by关键字，查询的是每个分组中的一条记录。</p>
-<p>2、GROUP BY和聚合函数一起使用<br>GROUP BY和聚合函数一起使用，可以统计出某个或者某些字段在一个分组中的最大值、最小值、平均值等等。</p>
-<p>3、GROUP BY和HAVING关键字一起使用<br>HAVING关键字和WHERE关键字的作用相同，都用于设置条件表达式对查询结果进行过滤。<br>HAVING关键字和WHERE关键字的区别在于，HAVING关键字后可以跟聚合函数，而WHERE关键字不能。通常情况下HAVING关键字都和GROUP BY一起使用，用于对分组后的结果进行过滤。</p>
-<h2 id="—4-3-4使用LIMIT限制查询结果的数量"><a href="#—4-3-4使用LIMIT限制查询结果的数量" class="headerlink" title="—4.3.4使用LIMIT限制查询结果的数量"></a>—4.3.4使用LIMIT限制查询结果的数量</h2><p>MySQL中提供了一个关键字LIMIT，可以指定查询结果从哪一条记录开始以及一共查询多少条信息。</p>
-<blockquote>
-<p>SELECT 字段名1,字段名2,……<br>FROM 表名<br>LIMIT [OFFSET，] 记录数(4,4的意思是从第五个开始查询四个数)</p>
-</blockquote>
-<h2 id="—4-3-5函数-列表"><a href="#—4-3-5函数-列表" class="headerlink" title="—4.3.5函数(列表)"></a>—4.3.5函数(列表)</h2><p>嗯 有点多 还是自己上网找吧</p>
-<h2 id="4-4-为表和字段取别名"><a href="#4-4-为表和字段取别名" class="headerlink" title="4.4 为表和字段取别名"></a>4.4 为表和字段取别名</h2><h2 id="—4-4-1为表取别名"><a href="#—4-4-1为表取别名" class="headerlink" title="—4.4.1为表取别名"></a>—4.4.1为表取别名</h2><p>在查询操作时，如果表名很长使用起来就不太方便，这时可以为表取一个别名，用这个别名来代替表的名称。<br>MySQL中为表起别名的格式如下所示：</p>
-<blockquote>
-<p>select *from 表名[as]别名;<br>AS关键字用于指定表名的别名，它可以省略不写。</p>
-</blockquote>
-<h2 id="—4-4-2为字段取别名"><a href="#—4-4-2为字段取别名" class="headerlink" title="—4.4.2为字段取别名"></a>—4.4.2为字段取别名</h2><blockquote>
-<p>select字段名[AS]别名，字段名[AS]别名form 表名;</p>
-</blockquote>
+<p>作业</p>
+<pre><code>create database db_student;
+use db_student;
+create table tb_student
+(
 
+
+);
+insert into tb_student values(数据);
+select*from tb_student;</code></pre>
             </div>
             <hr/>
 
@@ -628,7 +564,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zxq-hexo.github.io/2020/03/24/MySQL%E5%8D%95%E8%A1%A8%E6%9F%A5%E8%AF%A2/">https://zxq-hexo.github.io/2020/03/24/MySQL%E5%8D%95%E8%A1%A8%E6%9F%A5%E8%AF%A2/</a>
+                    <a href="https://zxq-hexo.github.io/2020/03/13/mysql/MySQL%E6%95%B0%E6%8D%AE%E8%A1%A8%E8%AF%A6%E7%BB%86%E5%91%BD%E4%BB%A4/">https://zxq-hexo.github.io/2020/03/13/mysql/MySQL%E6%95%B0%E6%8D%AE%E8%A1%A8%E8%AF%A6%E7%BB%86%E5%91%BD%E4%BB%A4/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -708,29 +644,33 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/04/08/MySQL%E5%A4%9A%E8%A1%A8%E6%93%8D%E4%BD%9C/">
+                <a href="/2020/03/14/mysql/MySQL%E6%95%B0%E6%8D%AE%E8%A1%A8/">
                     <div class="card-image">
                         
                         
-                        <img src="/zxq-hexo.github.io/medias/featureimages/1.jpg" class="responsive-img" alt="MySQL多表操作">
+                        <img src="/zxq-hexo.github.io/medias/featureimages/0.jpg" class="responsive-img" alt="mySQL数据表">
                         
-                        <span class="card-title">MySQL多表操作</span>
+                        <span class="card-title">mySQL数据表</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            mysql第三期
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-04-08
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-14
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            zxq
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/study/" class="post-category">
+                                    study
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -745,24 +685,24 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/03/16/php%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">
+                <a href="/2020/03/13/mysql/MYSQL%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
                     <div class="card-image">
                         
                         
-                        <img src="/zxq-hexo.github.io/medias/featureimages/18.jpg" class="responsive-img" alt="php基本语法">
+                        <img src="/zxq-hexo.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="mySQL数据类型">
                         
-                        <span class="card-title">php基本语法</span>
+                        <span class="card-title">mySQL数据类型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            PHP第一期
+                            mysql学习第二期
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-16
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-13
                             </span>
                         <span class="publish-author">
                             
@@ -971,7 +911,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">3.1k</span>&nbsp;字
+                class="white-color">4.1k</span>&nbsp;字
             
             
             

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="mySQL数据库, ZXQ">
+    <meta name="keywords" content="mySQL数据表, ZXQ">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>mySQL数据库 | ZXQ</title>
+    <title>mySQL数据表 | ZXQ</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -319,12 +319,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/zxq-hexo.github.io/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/zxq-hexo.github.io/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">mySQL数据库</h1>
+                    <h1 class="description center-align post-title">mySQL数据表</h1>
                 </div>
             </div>
         </div>
@@ -462,7 +462,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-03-13
+                    2020-03-14
                 </div>
                 
 
@@ -476,14 +476,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    147
+                    433
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -499,29 +499,72 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h2><p>在打开数据库后 输入密码登录随后输入  </p>
-<blockquote>
-<p><code>create database</code> [database_name];</p>
+                <h2 id="创建数据表"><a href="#创建数据表" class="headerlink" title="创建数据表"></a>创建数据表</h2><blockquote>
+<p><code>create table</code> [table_name]<br>(<br>[clumn_name] [column_type],<br>[clumn2_name] [column2_type]<br>);</p>
 </blockquote>
-<p>我们假设数据库名字为db_student 则例子为:  </p>
-<pre><code>musql&gt;create database  db_student;    
-Query OK,1 row affected (0.01 sec)</code></pre><h2 id="查询数据库"><a href="#查询数据库" class="headerlink" title="查询数据库"></a>查询数据库</h2><blockquote>
-<p><code>show databases;</code></p>
-</blockquote>
-<h2 id="选择数据库"><a href="#选择数据库" class="headerlink" title="选择数据库"></a>选择数据库</h2><blockquote>
-<p><code>use</code>[database_name];</p>
-</blockquote>
-<p>我们假设数据库名字为db_student 则例子为: </p>
+<p>我们在数据库db_student 中创建一个表名为tb_studnet，并要求有列名[名字name和年龄age]</p>
 <pre><code>mysql&gt;use db_student;
-Database changed</code></pre><h2 id="删除数据库"><a href="#删除数据库" class="headerlink" title="删除数据库"></a>删除数据库</h2><blockquote>
-<p><code>drop database</code> [database_name];</p>
-</blockquote>
-<h2 id="退出MySQL"><a href="#退出MySQL" class="headerlink" title="退出MySQL"></a>退出MySQL</h2><blockquote>
-<p><code>exit;</code></p>
-</blockquote>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>(以<code>db_student</code>作为要操作的数据库)</p>
+Database changed
+mysql&gt;create table tb_student
+    -&gt;(
+    -&gt;name varchar(20),
+    -&gt;age  int(2)
+    -&gt;);
+Query OK,0 rows affected (0.03 sec)</code></pre><h2 id="查看数据表"><a href="#查看数据表" class="headerlink" title="查看数据表"></a>查看数据表</h2><p>注意:在选择数据库(use database_name;)后才可查看数据表</p>
 <blockquote>
-<p>创建数据库:<code>create database db_student;</code><br>查询数据库:<code>show databases;</code><br>选择数据库:<code>use db_student；</code><br>删除数据库:<code>drop database db_student;</code><br>退出MySQL：<code>exit;</code></p>
+<p><code>show tables;</code> </p>
+</blockquote>
+<p>接下来让我们查看一下tb_student</p>
+<pre><code>mysql&gt;show tables;
++----------------------+
+| Tables_in_db_student |
++----------------------+
+| tb_student           |
++----------------------+
+1 row in set (0.00 sec)</code></pre><p>可以使用(<code>describe</code>[tables_name];或者<code>show create table</code> [tables_name];)更详细的查看<strong>创建</strong>的数据库</p>
+<h2 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h2><blockquote>
+<p><code>insert into</code>[table_name] (field1,field2….fieldN)<br><code>values</code><br>(value1,value2….valuesN);</p>
+</blockquote>
+<p>接下来我们以数据<strong>小范，16</strong>为例子进行插入数据</p>
+<pre><code>mysql&gt; insert into tb_student(name,age)
+    -&gt; values
+    -&gt; (&apos;小范&apos;,16);
+Query OK, 1 row affected (0.01 sec)</code></pre><p>如果不指定列名一样可以运行(不指定列名，则默认全选列名)</p>
+<pre><code>mysql&gt; insert into tb_student
+    -&gt; values    
+    -&gt; (&apos;小范&apos;,16);
+Query OK, 1 row affected (0.01 sec)</code></pre><h2 id="查看数据"><a href="#查看数据" class="headerlink" title="查看数据"></a>查看数据</h2><blockquote>
+<p><code>select * from</code>[table_name];</p>
+</blockquote>
+<p>查看tb_student的数据</p>
+<pre><code>mysql&gt; select* from tb_student;
++--------+------+
+| name   | age  |
++--------+------+
+| 小范   |   16 |
++--------+------+
+1 row in set (0.00 sec)</code></pre><h2 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h2><blockquote>
+<p><code>update</code> [table_name]<br><code>set</code> [clumn_name]=[数据]  （修改数据）<br><code>where</code> [clumn_name]=[数据] （定义到这行）</p>
+</blockquote>
+<p>修改age为17</p>
+<pre><code>mysql&gt; update tb_student
+    -&gt; set age=17
+    -&gt; where name=&apos;小范&apos;;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+mysql&gt; select* from tb_student;
++--------+------+
+| name   | age  |
++--------+------+
+| 小范   |   17 |
++--------+------+
+1 row in set (0.00 sec)</code></pre><h2 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h2><blockquote>
+<p><code>delete form</code> [table_name]<code>where</code> [clumn_name]=[数据];</p>
+</blockquote>
+<h2 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h2><blockquote>
+<p><code>delete from</code>[table_name];<br>只能删除表中的数据 并且删除的数据是可以找回来的</p>
+<p><code>drop table</code>[table_name];<br>这种删除数据的办法 直接删除表  并不可以恢复</p>
+<p><code>truncate table</code> [table_name];<br>只能删除表中的数据  找不回来(数据全删除)</p>
 </blockquote>
 
             </div>
@@ -548,7 +591,7 @@ Database changed</code></pre><h2 id="删除数据库"><a href="#删除数据库"
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zxq-hexo.github.io/2020/03/13/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/">https://zxq-hexo.github.io/2020/03/13/MySQL%E6%95%B0%E6%8D%AE%E5%BA%93/</a>
+                    <a href="https://zxq-hexo.github.io/2020/03/14/mysql/MySQL%E6%95%B0%E6%8D%AE%E8%A1%A8/">https://zxq-hexo.github.io/2020/03/14/mysql/MySQL%E6%95%B0%E6%8D%AE%E8%A1%A8/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -628,24 +671,24 @@ Database changed</code></pre><h2 id="删除数据库"><a href="#删除数据库"
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/03/13/MYSQL%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
+                <a href="/2020/03/14/mysql/MySQL%E7%B4%A2%E5%BC%95/">
                     <div class="card-image">
                         
                         
-                        <img src="/zxq-hexo.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="mySQL数据类型">
+                        <img src="/zxq-hexo.github.io/medias/featureimages/5.jpg" class="responsive-img" alt="mySQL索引">
                         
-                        <span class="card-title">mySQL数据类型</span>
+                        <span class="card-title">mySQL索引</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            mysql学习第二期
+                            索引
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-13
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-14
                         </span>
                         <span class="publish-author">
                             
@@ -669,24 +712,24 @@ Database changed</code></pre><h2 id="删除数据库"><a href="#删除数据库"
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/03/11/MySQL%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/">
+                <a href="/2020/03/13/mysql/MySQL%E6%95%B0%E6%8D%AE%E8%A1%A8%E8%AF%A6%E7%BB%86%E5%91%BD%E4%BB%A4/">
                     <div class="card-image">
                         
                         
-                        <img src="/zxq-hexo.github.io/medias/featureimages/2.jpg" class="responsive-img" alt="mySQL">
+                        <img src="/zxq-hexo.github.io/medias/featureimages/7.jpg" class="responsive-img" alt="mySQL数据表详细命令">
                         
-                        <span class="card-title">mySQL</span>
+                        <span class="card-title">mySQL数据表详细命令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            mysql数据导入
+                            mysql第三期
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-13
                             </span>
                         <span class="publish-author">
                             
@@ -895,7 +938,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">3.1k</span>&nbsp;字
+                class="white-color">4.1k</span>&nbsp;字
             
             
             

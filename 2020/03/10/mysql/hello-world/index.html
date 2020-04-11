@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="mySQL数据表, ZXQ">
+    <meta name="keywords" content="第一篇博客, ZXQ">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>mySQL数据表 | ZXQ</title>
+    <title>第一篇博客 | ZXQ</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -306,7 +306,7 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '';
+        let pwd = '123';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -319,12 +319,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/zxq-hexo.github.io/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/zxq-hexo.github.io/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">mySQL数据表</h1>
+                    <h1 class="description center-align post-title">第一篇博客</h1>
                 </div>
             </div>
         </div>
@@ -449,8 +449,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/study/" class="post-category">
-                                study
+                            <a href="/categories/test/" class="post-category">
+                                test
                             </a>
                         
                     </div>
@@ -462,28 +462,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-03-14
+                    2020-03-10
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-03-14
+                    2020-03-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    433
+                    28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    1 分
                 </div>
                 
 
@@ -499,73 +499,21 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="创建数据表"><a href="#创建数据表" class="headerlink" title="创建数据表"></a>创建数据表</h2><blockquote>
-<p><code>create table</code> [table_name]<br>(<br>[clumn_name] [column_type],<br>[clumn2_name] [column2_type]<br>);</p>
-</blockquote>
-<p>我们在数据库db_student 中创建一个表名为tb_studnet，并要求有列名[名字name和年龄age]</p>
-<pre><code>mysql&gt;use db_student;
-Database changed
-mysql&gt;create table tb_student
-    -&gt;(
-    -&gt;name varchar(20),
-    -&gt;age  int(2)
-    -&gt;);
-Query OK,0 rows affected (0.03 sec)</code></pre><h2 id="查看数据表"><a href="#查看数据表" class="headerlink" title="查看数据表"></a>查看数据表</h2><p>注意:在选择数据库(use database_name;)后才可查看数据表</p>
-<blockquote>
-<p><code>show tables;</code> </p>
-</blockquote>
-<p>接下来让我们查看一下tb_student</p>
-<pre><code>mysql&gt;show tables;
-+----------------------+
-| Tables_in_db_student |
-+----------------------+
-| tb_student           |
-+----------------------+
-1 row in set (0.00 sec)</code></pre><p>可以使用(<code>describe</code>[tables_name];或者<code>show create table</code> [tables_name];)更详细的查看<strong>创建</strong>的数据库</p>
-<h2 id="插入数据"><a href="#插入数据" class="headerlink" title="插入数据"></a>插入数据</h2><blockquote>
-<p><code>insert into</code>[table_name] (field1,field2….fieldN)<br><code>values</code><br>(value1,value2….valuesN);</p>
-</blockquote>
-<p>接下来我们以数据<strong>小范，16</strong>为例子进行插入数据</p>
-<pre><code>mysql&gt; insert into tb_student(name,age)
-    -&gt; values
-    -&gt; (&apos;小范&apos;,16);
-Query OK, 1 row affected (0.01 sec)</code></pre><p>如果不指定列名一样可以运行(不指定列名，则默认全选列名)</p>
-<pre><code>mysql&gt; insert into tb_student
-    -&gt; values    
-    -&gt; (&apos;小范&apos;,16);
-Query OK, 1 row affected (0.01 sec)</code></pre><h2 id="查看数据"><a href="#查看数据" class="headerlink" title="查看数据"></a>查看数据</h2><blockquote>
-<p><code>select * from</code>[table_name];</p>
-</blockquote>
-<p>查看tb_student的数据</p>
-<pre><code>mysql&gt; select* from tb_student;
-+--------+------+
-| name   | age  |
-+--------+------+
-| 小范   |   16 |
-+--------+------+
-1 row in set (0.00 sec)</code></pre><h2 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h2><blockquote>
-<p><code>update</code> [table_name]<br><code>set</code> [clumn_name]=[数据]  （修改数据）<br><code>where</code> [clumn_name]=[数据] （定义到这行）</p>
-</blockquote>
-<p>修改age为17</p>
-<pre><code>mysql&gt; update tb_student
-    -&gt; set age=17
-    -&gt; where name=&apos;小范&apos;;
-Query OK, 1 row affected (0.01 sec)
-Rows matched: 1  Changed: 1  Warnings: 0
-mysql&gt; select* from tb_student;
-+--------+------+
-| name   | age  |
-+--------+------+
-| 小范   |   17 |
-+--------+------+
-1 row in set (0.00 sec)</code></pre><h2 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h2><blockquote>
-<p><code>delete form</code> [table_name]<code>where</code> [clumn_name]=[数据];</p>
-</blockquote>
-<h2 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h2><blockquote>
-<p><code>delete from</code>[table_name];<br>只能删除表中的数据 并且删除的数据是可以找回来的</p>
-<p><code>drop table</code>[table_name];<br>这种删除数据的办法 直接删除表  并不可以恢复</p>
-<p><code>truncate table</code> [table_name];<br>只能删除表中的数据  找不回来(数据全删除)</p>
-</blockquote>
+                <p>你好</p>
+<p>##1</p>
+<p>###2</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#96;&#96;&#96; bash</span><br><span class="line">$ hexo new &quot;My New Post&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="4"><a href="#4" class="headerlink" title="4"></a>4</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="5"><a href="#5" class="headerlink" title="5"></a>5</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 
             </div>
             <hr/>
@@ -591,7 +539,7 @@ mysql&gt; select* from tb_student;
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zxq-hexo.github.io/2020/03/14/MySQL%E6%95%B0%E6%8D%AE%E8%A1%A8/">https://zxq-hexo.github.io/2020/03/14/MySQL%E6%95%B0%E6%8D%AE%E8%A1%A8/</a>
+                    <a href="https://zxq-hexo.github.io/2020/03/10/mysql/hello-world/">https://zxq-hexo.github.io/2020/03/10/mysql/hello-world/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -671,24 +619,24 @@ mysql&gt; select* from tb_student;
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/03/14/java/java%E7%B4%A2%E5%BC%95/">
+                <a href="/2020/03/11/mysql/MySQL%E5%AF%BC%E5%85%A5%E6%95%B0%E6%8D%AE/">
                     <div class="card-image">
                         
                         
-                        <img src="/zxq-hexo.github.io/medias/featureimages/19.jpg" class="responsive-img" alt="java索引">
+                        <img src="/zxq-hexo.github.io/medias/featureimages/2.jpg" class="responsive-img" alt="mySQL">
                         
-                        <span class="card-title">java索引</span>
+                        <span class="card-title">mySQL</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            索引
+                            mysql数据导入
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-14
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-03-11
                         </span>
                         <span class="publish-author">
                             
@@ -709,40 +657,41 @@ mysql&gt; select* from tb_student;
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2020/03/13/MySQL%E6%95%B0%E6%8D%AE%E8%A1%A8%E8%AF%A6%E7%BB%86%E5%91%BD%E4%BB%A4/">
+                <a href="/2020/03/10/mysql/hello-world/">
                     <div class="card-image">
                         
                         
-                        <img src="/zxq-hexo.github.io/medias/featureimages/7.jpg" class="responsive-img" alt="mySQL数据表详细命令">
+                        <img src="/zxq-hexo.github.io/medias/featureimages/13.jpg" class="responsive-img" alt="第一篇博客">
                         
-                        <span class="card-title">mySQL数据表详细命令</span>
+                        <span class="card-title">第一篇博客</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            mysql第三期
+                            hello world
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-10
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/study/" class="post-category">
-                                    study
+                            <a href="/categories/test/" class="post-category">
+                                    test
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -938,7 +887,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">3.1k</span>&nbsp;字
+                class="white-color">4.1k</span>&nbsp;字
             
             
             
